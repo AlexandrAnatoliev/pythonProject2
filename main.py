@@ -28,15 +28,14 @@ def clean_text(text):
         cl_text = cl_text[:cl_text.find('\r')] + cl_text[cl_text.find('\n') + 1:]
     return cl_text
 
+
 file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
 
-# Очищеная страница
+# Очищеная страница записывается в список 'jokes' и в текстовый файл 'secondText.txt'
 jokes = []
 for joke in fun:
     jokes.append(clean_text(joke))
+    file2.write(clean_text(joke) + '\n')
 
-
-file2.write(jokes[0])
 file2.close()  # закрывает файл
 print(jokes)
-

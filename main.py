@@ -21,11 +21,12 @@ def clean_text(text):
     :param text: вводим текст
     :return: чистый текст
     """
-    clean_text = str(text)
-    while '<' in clean_text:
-        clean_text = clean_text[:clean_text.find('<')] + clean_text[clean_text.find('>') + 1:]
-    #while '\r\n' in c
-    return clean_text
+    cl_text = str(text)
+    while '<' in cl_text:
+        cl_text = cl_text[:cl_text.find('<')] + cl_text[cl_text.find('>') + 1:]
+    while '\r\n' in cl_text:
+        cl_text = cl_text[:cl_text.find('\r')] + cl_text[cl_text.find('\n') + 1:]
+    return cl_text
 
 file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
 
@@ -37,5 +38,5 @@ for joke in fun:
 
 file2.write(jokes[0])
 file2.close()  # закрывает файл
-print(jokes[0])
+print(jokes)
 

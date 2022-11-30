@@ -21,19 +21,21 @@ def clean_text(text):
     :param text: вводим текст
     :return: чистый текст
     """
-    crean_text = str(text)
-    while '<' in crean_text:
-        crean_text = crean_text[:crean_text.find('<')] + crean_text[crean_text.find('>') + 1:]
-    return crean_text
+    clean_text = str(text)
+    while '<' in clean_text:
+        clean_text = clean_text[:clean_text.find('<')] + clean_text[clean_text.find('>') + 1:]
+    #while '\r\n' in c
+    return clean_text
 
+file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
 
 # Очищеная страница
 jokes = []
 for joke in fun:
     jokes.append(clean_text(joke))
 
-file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
-file2.write("\nСовпадения текста 1 и базы данных 2:\n\n")
+
+file2.write(jokes[0])
 file2.close()  # закрывает файл
-print(jokes)
+print(jokes[0])
 

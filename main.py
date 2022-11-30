@@ -7,7 +7,7 @@
 import requests
 from bs4 import BeautifulSoup as BS
 
-r = requests.get("https://anekdoty.ru/samye-smeshnye/")
+r = requests.get("https://anekdoty.ru/samye-smeshnye/page/20/")
 html = BS(r.content, 'html.parser')
 
 # Скачиваем все анекдоты со страницы (с мусором)

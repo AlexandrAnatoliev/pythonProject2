@@ -32,5 +32,8 @@ jokes = []
 for joke in fun:
     jokes.append(clean_text(joke))
 
+file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
+file2.write("\nСовпадения текста 1 и базы данных 2:\n\n")
+file2.close()  # закрывает файл
 print(jokes)
 

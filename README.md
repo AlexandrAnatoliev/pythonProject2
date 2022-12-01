@@ -1,4 +1,4 @@
-# parser 1
+# pythonProject2
 
 [Ru] Парсер анекдоты с сайта
 

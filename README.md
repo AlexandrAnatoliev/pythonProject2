@@ -10,6 +10,12 @@
 
 * Установить внешние зависимости
 * $ pip install -r requirements.txt
+* создать файл config.py в котором разместить адрес сайта и селектор в виде:
+```python
+# Сайт Анекдоты.ру: адрес и селектор
+site_adress = "https://anekdoty.ru/samye-smeshnye/page/"
+sel = " div > div.holder-body > p"
+```
 
 ## Подключаем модули
 

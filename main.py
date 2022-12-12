@@ -7,6 +7,7 @@
 
 import requests
 from bs4 import BeautifulSoup as BS
+from config import site_adress, sel
 
 # парсим первые 20 страниц
 page_list = range(1, 20 + 1)
@@ -14,12 +15,12 @@ fun_list = []
 
 for page in page_list:
     # Получаем содержимое страницы ("ее адрес") через библиотеку requests
-    r = requests.get("https://anekdoty.ru/samye-smeshnye/page/" + str(page) + '/')
+    r = requests.get(site_adress + str(page) + '/')
     # скачанное обрабатываем через библиотеку BeautifulSoup
     html = BS(r.content, 'html.parser')
 
     # Скачиваем все анекдоты со страницы (с мусором)
-    fun = html.select(" div > div.holder-body > p")
+    fun = html.select(sel)
     fun_list += fun
 
 

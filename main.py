@@ -15,7 +15,7 @@ fun_list = []
 
 for page in page_list:
     # Получаем содержимое страницы ("ее адрес") через библиотеку requests
-    r = requests.get(site_adress + str(page) + '/')
+    r = requests.get(site_adress + str(page) + "/")
     # скачанное обрабатываем через библиотеку BeautifulSoup
     html = BS(r.content, 'html.parser')
 
@@ -36,9 +36,11 @@ def clean_text(text):
         cl_text = cl_text[:cl_text.find('<')] + cl_text[cl_text.find('>') + 1:]
     while '\r\n' in cl_text:
         cl_text = cl_text[:cl_text.find('\r')] + cl_text[cl_text.find('\n') + 1:]
+    while '\n' in cl_text:
+        cl_text = cl_text.replace('\n',' ')
     return cl_text
 
-
+# print(html)
 file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла
 
 # Очищеная страница записывается в список 'jokes' и в текстовый файл 'secondText.txt'

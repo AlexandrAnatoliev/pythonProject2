@@ -58,6 +58,8 @@ def clean_text(text):
         cl_text = cl_text[:cl_text.find('<')] + cl_text[cl_text.find('>') + 1:]
     while '\r\n' in cl_text:
         cl_text = cl_text[:cl_text.find('\r')] + cl_text[cl_text.find('\n') + 1:]
+    while '\n' in cl_text:
+        cl_text = cl_text.replace('\n',' ')
     return cl_text
 ```
 

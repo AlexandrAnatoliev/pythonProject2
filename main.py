@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup as BS
 from config import site_adress, sel
 
 # парсим первые 20 страниц
-page_list = range(1, 2 + 1)
+page_list = range(1, 8 + 1)
 fun_list = []
 
 for page in page_list:

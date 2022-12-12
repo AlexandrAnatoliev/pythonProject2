@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup as BS
 from config import site_adress, sel
 
 # парсим первые 20 страниц
-page_list = range(1, 8 + 1)
+page_list = range(1, 2 + 1)
 fun_list = []
 
 for page in page_list:
@@ -37,8 +37,9 @@ def clean_text(text):
     while '\r\n' in cl_text:
         cl_text = cl_text[:cl_text.find('\r')] + cl_text[cl_text.find('\n') + 1:]
     while '\n' in cl_text:
-        cl_text = cl_text.replace('\n',' ')
+        cl_text = cl_text.replace('\n', ' ')
     return cl_text
+
 
 # print(html)
 file2 = open("secondText.txt", 'w', encoding='utf-8')  # создается файл, 'w' - запись файла

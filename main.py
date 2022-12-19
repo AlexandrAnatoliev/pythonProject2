@@ -10,12 +10,12 @@ from bs4 import BeautifulSoup as BS
 from config import site_adress, sel
 
 # парсим первые 20 страниц
-page_list = range(1, 2 + 1)
+page_list = range(1, 10 + 1)
 fun_list = []
 
 for page in page_list:
     # Получаем содержимое страницы ("ее адрес") через библиотеку requests
-    r = requests.get(site_adress + str(page) + "/")
+    r = requests.get(site_adress + str(page))
     # скачанное обрабатываем через библиотеку BeautifulSoup
     html = BS(r.content, 'html.parser')
 
